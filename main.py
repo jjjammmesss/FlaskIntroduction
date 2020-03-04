@@ -9,11 +9,12 @@ already functional codebase.
 #   -   `flask.request` to access the content of the HTTP request being sent to the application.
 #   -   `flask.abort` to deliver a 404 if an unsupported method is detected on our "/" route.
 from flask import Flask, render_template, request, abort
+import sys
+sys.path.append("./src")
 
 
 # Importing the my_code() function defined in `src.my_code`
-from src.my_code import my_code
-
+from my_code import my_code
 # Instantiating a Flask object, which acts as the core for our Web Application.
 app = Flask(__name__)
 
