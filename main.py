@@ -37,7 +37,7 @@ def index():
         # --> `request.form` contains key-value pairs for all input fields in the HTML form.
         user_input = dict(request.form)
         # Run `my_code()` on the user input we took from the form.
-        processed_user_input = my_code(user_input["input"])
+        processed_user_input = my_code(str(user_input["input"][0]))
         # Return another, different template to output the result to the user.
         # --> Passing a keyword argument of processed_user_input lets us access the data in the template.
         return render_template("output.html", processed_user_input=processed_user_input)
