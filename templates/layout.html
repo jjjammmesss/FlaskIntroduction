@@ -1,0 +1,45 @@
+<!--
+
+layout.html defines the layout of our application.
+Within the <head> tag we include a .css file, in this case bootstrap4 from https://https://getbootstrap.com/
+
+Within the <script> tags we include a couple of .js files.
+    `jquery.js` is a dependency for `bootstrap.js`.
+    `bootstrap.js` is the JavaScript driver code for Bootstrap. We're not really doing any JavaScript here though.
+
+Flask uses Jinja2 templating. Documentation on this can be found at:
+    https://https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
+
+Essentially, we reference variables we pass into the template from our application using { { } } decoration.
+
+We can perform template inheritance using Jinja2 also.
+
+!-->
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+
+        <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+            <div class="col-6">
+                <div class="card card-body">
+                    <!-- Here, { % block content % } defines where our imported content block will go in the file.
+                    { % endblock % } defines where this imported content should end.
+                    !-->
+                    {% block content %} {% endblock %}
+                </div>
+            </div>
+            <div class="col-3">
+
+            </div>
+        </div>
+
+    </body>
+</html>

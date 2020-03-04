@@ -1,0 +1,16 @@
+<!-- Check index.html for information on the inheritance being performed here. !-->
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h1 class="display-1">Result</h1>
+    <p class="lead">Your text has been converted to uppercase!</p>
+    <hr>
+    <div class="card card-body">
+        <!-- Use Jinja2 variable injection to show the processed data to the user in a textarea. !-->
+        <textarea class="form-control">{{ processed_user_input }}</textarea>
+    </div>
+    <a class="btn btn-dark" href="/">Go back</a>
+
+{% endblock %}

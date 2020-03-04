@@ -1,0 +1,27 @@
+<!--
+
+In this, one of our child templates, we link this to the `layout.html` file using { % extends "layout.html" % }.
+We define our content block using the { % % } decoration explained in `layout.html`.
+More information on Jinja2 template inheritance can be found here:
+
+    https://https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates
+
+!-->
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 align="center" class="display-1">Text Converter</h1>
+    <p align="center" class="lead">Takes your text, and converts it to uppercase!</p>
+    <hr>
+    <!-- Simple HTML form, which sends it's data on submission to our http://localhost:8080/ route. !-->
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="textInput">Enter your text.</label>
+            <!-- Defines a textarea for the user to enter their text. !-->
+            <textarea name="input" style="height:600px;" class="form-control" id="textInput"></textarea>
+        </div>
+        <!-- A button. Setting "type" to "submit" makes this button submit the data on click. !-->
+        <button class="btn btn-dark" style="width:100%;" type="submit">Submit</button>
+    </form>
+{% endblock %}
